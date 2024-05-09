@@ -13,7 +13,7 @@
 
 
     <!-- Fleet manager -->
-    <node pkg="fleet_adapter_template"
+    <node pkg="turtlebot3_fleet_adapter"
         exec="fleet_manager"
         args="--config_file $(var config_file) --nav_graph $(var nav_graph_file)"
         output="both">
@@ -23,7 +23,7 @@
 
     <!-- Fleet adapter -->
     <group if="$(var use_sim_time)">
-        <node pkg="fleet_adapter_template"
+        <node pkg="turtlebot3_fleet_adapter"
             exec="fleet_adapter"
             args="-c $(var config_file) -n $(var nav_graph_file)"
             output="both">
@@ -34,7 +34,7 @@
     </group>
 
     <group unless="$(var use_sim_time)">
-        <node pkg="fleet_adapter_template"
+        <node pkg="turtlebot3_fleet_adapter"
             exec="fleet_adapter"
             args="-c $(var config_file) -n $(var nav_graph_file)"
             output="both">
